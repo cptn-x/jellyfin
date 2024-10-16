@@ -94,11 +94,6 @@ namespace Emby.Server.Implementations.Data
 
         public virtual void Initialize()
         {
-            // Configuration and pragmas can affect VACUUM so it needs to be last.
-            using (var connection = GetConnection())
-            {
-                connection.Execute("VACUUM");
-            }
         }
 
         protected ManagedConnection GetConnection(bool readOnly = false)
