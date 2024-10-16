@@ -97,7 +97,7 @@ public class PersonsController : BaseJellyfinApiController
             User = user,
             IsFavorite = !isFavorite.HasValue && isFavoriteInFilters ? true : isFavorite,
             AppearsInItemId = appearsInItemId ?? Guid.Empty,
-            Limit = limit ?? 0
+            Limit = 10
         });
 
         return new QueryResult<BaseItemDto>(
