@@ -364,7 +364,7 @@ public class MediaInfoHelper
                     _ => 1,
                 };
             })
-            .ThenBy(i =>
+            .ThenByDescending(i => ///Grouped movies have lowest bitrate first
             {
                 if (maxBitrate.HasValue && i.Bitrate.HasValue)
                 {
